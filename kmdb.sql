@@ -194,7 +194,7 @@ VALUES (3, 12);
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+SELECT * FROM movies;
 
 -- Prints a header for the cast output
 .print ""
@@ -203,4 +203,7 @@ VALUES (3, 12);
 .print ""
 
 -- The SQL statement for the cast output
--- TODO!
+SELECT movies.title, actors.full_name, actors.role_title
+FROM movies 
+INNER JOIN casts ON movies.id = casts.movies_id 
+INNER JOIN actors ON actors.id = casts.actors_id; 
